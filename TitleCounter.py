@@ -42,7 +42,13 @@ class TitleCounter:
 
         # Calculate unique and duplicate titles
         unique_titles = len(self.title_counts)
+
         duplicate_titles = sum(count - 1 for count in self.title_counts.values() if count > 1)
+
+        with open("allUniqueTitles.txt", 'w', encoding='utf-8') as file:
+        # Iterate through the dictionary keys (titles)
+            for title in self.title_counts.keys():
+                file.write(title + '\n')  # Write each unique title to the file
 
         return unique_titles, duplicate_titles
 

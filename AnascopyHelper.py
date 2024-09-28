@@ -17,6 +17,7 @@ if __name__ == "__main__":
     
     for i in range(0, len(term)):
         files.append(output_file+str(i+1)+".txt")
+        files.append("scopusC"+str(i+1)+".txt")
         searcher = PubMedSearcher(term[i], output_file+str(i+1)+".txt", filters=filters)
         print (i+1,"-",term[i],":", searcher.search(),"results")
 
